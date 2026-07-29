@@ -85,11 +85,11 @@ export function SecondSection({
 
 export function OrderDirectlyfromOUrWebsite() {
   return (
-    <div className="relative flex items-end h-96 md:h-svh w-full sm:w-[85vw] rounded-2xl sm:rounded-3xl overflow-hidden">
+    <div className="relative flex items-end h-96 md:h-svh w-full sm:w-[85vw] rounded-2xl sm:rounded-3xl overflow-">
       <Image
         src={mainImg}
         alt={`${SITE_CONFIG.name} homemade food plated and ready to order`}
-        sizes="(max-width: 640px) 100vw, 85vw"
+        // sizes="(max-width: 640px) 100vw"
         className="object-cover w-full h-full"
       />
     </div>

@@ -3,21 +3,21 @@ import CateringPageClient from "./_components/CateringPageClient";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: `Catering | Jerk Chicken Catering for ${SITE_CONFIG.city} Events`,
-  description: `${SITE_CONFIG.name} caters jerk chicken, wings, and Caribbean-inspired sides for weddings, corporate events, and parties in ${SITE_CONFIG.city}, ${SITE_CONFIG.state}. Request a custom quote today.`,
+  title: `Catering | Homemade Comfort Food Catering for ${SITE_CONFIG.city} Events`,
+  description: `${SITE_CONFIG.name} caters all-day breakfast, burgers, homemade pizza, wings, and daily specials for parties, corporate events, and gatherings in ${SITE_CONFIG.city}, ${SITE_CONFIG.state}. Request a custom quote today.`,
   keywords: [
-    `Caribbean catering ${SITE_CONFIG.city}`,
-    `jerk chicken catering ${SITE_CONFIG.city}`,
-    `wing catering ${SITE_CONFIG.city}`,
+    `catering ${SITE_CONFIG.city}`,
+    `breakfast catering ${SITE_CONFIG.city}`,
+    `burger catering ${SITE_CONFIG.city}`,
     `event catering ${SITE_CONFIG.city} ${SITE_CONFIG.state}`,
-    `corporate catering ${SITE_CONFIG.city}`,
+    `party catering ${SITE_CONFIG.city}`,
   ],
   alternates: {
     canonical: "/catering",
   },
   openGraph: {
     title: `Catering | ${SITE_CONFIG.name} ${SITE_CONFIG.city}`,
-    description: `Jerk chicken and Caribbean-inspired catering for weddings, corporate events, and parties in ${SITE_CONFIG.city}, ${SITE_CONFIG.state}.`,
+    description: `Homemade comfort-food catering — breakfast, burgers, pizza, wings, and daily specials for events in ${SITE_CONFIG.city}, ${SITE_CONFIG.state}.`,
     url: "/catering",
   },
 };

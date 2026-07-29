@@ -14,7 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import img from "public/general/3rdsection/SouthernJerks-Sep25-42.jpg";
+import img from "public/general/generalPages/enjoy.jpg";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 // Sample/test catering packages for preview. Swap prices/items for the real
@@ -162,7 +162,7 @@ export default function CateringPageClient() {
         <div className="w-full sm:w-1/2 h-75 md:h-full relative overflow-hidden rounded-2xl">
           <Image
             src={img}
-            alt={`${SITE_CONFIG.name} jerk chicken and wings catering trays for ${SITE_CONFIG.city} events`}
+            alt={`${SITE_CONFIG.name} homemade catering trays for ${SITE_CONFIG.city} events`}
             fill
             className="object-cover"
             priority
@@ -228,22 +228,53 @@ export default function CateringPageClient() {
       {/* Menu / Packages */}
       <section
         ref={packagesRef}
-        className="max-w-6xl w-full space-y-10 pb-4 px-2"
+        className="max-w-6xl w-full space-y-8 pb-4 px-2"
       >
-        <div className="flex flex-col gap-4 sm:flex-row justify-between items-center">
+        <div className="space-y-2 text-center">
           <h2 className="text-3xl font-bold">Catering Menu</h2>
-          <Button
-            size="lg"
-            variant="outline"
-            className="h-12  text-left"
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/southern-jerks-catering-menu.pdf";
-              link.download = "Pams-Kitchen-Catering-Menu.pdf";
-              link.click();
-            }}
-          >
-            Download Menu
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Sample packages to get you started — mix, match, or ask for
+            something custom. Request a quote for exact pricing based on your
+            headcount.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {CATERING_PACKAGES.map((pkg, i) => (
+            <Card
+              key={i}
+              className="rounded-2xl shadow-md bg-white overflow-hidden"
+            >
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-bold">{pkg.name}</h3>
+                    <p className="text-sm text-gray-500">{pkg.serves}</p>
+                  </div>
+                  <span className="whitespace-nowrap text-lg font-extrabold text-yellow-600">
+                    {pkg.price}
+                  </span>
+                </div>
+                <ul className="space-y-1.5 text-gray-700">
+                  {pkg.items.map((item, j) => (
+                    <li key={j} className="flex gap-2">
+                      <span className="text-yellow-500">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center gap-3 pt-2">
+          <p className="text-sm text-gray-400 text-center">
+            Sample menu for preview — prices are estimates and fully
+            customizable.
+          </p>
+          <Button variant="mainButton" size="lg" onClick={() => setOpen(true)}>
+            Request a Quote
           </Button>
         </div>
       </section>
