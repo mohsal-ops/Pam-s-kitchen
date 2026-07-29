@@ -17,6 +17,82 @@ import {
 import img from "public/general/3rdsection/SouthernJerks-Sep25-42.jpg";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
+// Sample/test catering packages for preview. Swap prices/items for the real
+// menu later (or wire to the dashboard) — this replaces the old PDF download.
+const CATERING_PACKAGES: {
+  name: string;
+  serves: string;
+  price: string;
+  items: string[];
+}[] = [
+  {
+    name: "All-Day Breakfast Spread",
+    serves: "Serves 10–12",
+    price: "$120",
+    items: [
+      "Scrambled eggs & crispy bacon",
+      "Sausage links & breakfast potatoes",
+      "Buttermilk pancakes with syrup",
+      "Biscuits & homemade gravy",
+    ],
+  },
+  {
+    name: "Burger Bar",
+    serves: "Serves 10–12",
+    price: "$140",
+    items: [
+      "Hand-pressed beef sliders",
+      "Cheddar, lettuce, tomato & onion",
+      "Pickles & house sauces",
+      "Seasoned fries",
+    ],
+  },
+  {
+    name: "Homemade Pizza Party",
+    serves: "Serves 12–15",
+    price: "$130",
+    items: [
+      "Pepperoni, cheese & supreme pizzas",
+      "Hand-tossed homemade dough",
+      "Garlic knots",
+      "Ranch & marinara dips",
+    ],
+  },
+  {
+    name: "Wings & Sides Tray",
+    serves: "50 wings",
+    price: "$95",
+    items: [
+      "Crispy bone-in wings",
+      "Buffalo, BBQ & plain",
+      "Celery & carrot sticks",
+      "Ranch & blue cheese",
+    ],
+  },
+  {
+    name: "Daily Specials Combo",
+    serves: "Serves 12",
+    price: "$150",
+    items: [
+      "Chef's choice of daily specials",
+      "Two homestyle sides",
+      "Dinner rolls",
+      "Cookies & brownies",
+    ],
+  },
+  {
+    name: "Dessert Tray",
+    serves: "Serves 15",
+    price: "$60",
+    items: [
+      "Assorted homemade cookies",
+      "Fudge brownies",
+      "Mini fruit cobblers",
+      "Fresh whipped cream",
+    ],
+  },
+];
+
 export default function CateringPageClient() {
   const [open, setOpen] = useState(false);
   const packagesRef = useRef<HTMLDivElement | null>(null);

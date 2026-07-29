@@ -74,7 +74,7 @@ export const SITE_CONFIG = {
       {
         title: "Breakfast, served all day",
         description:
-          "From fluffy pancakes to loaded breakfast burritos, our morning favorites are ready whenever you are — made fresh, made from scratch.",
+          "From fluffy pancakes to loaded breakfast burritos, our morning favorites are ready whenever you are, made fresh, made from scratch.",
         image: "/general/generalPages/enjoy.jpg",
       },
       {

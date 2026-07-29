@@ -24,7 +24,7 @@ const IMAGES = [
 async function main() {
   const existing = await db.galleryImage.count();
   if (existing > 0) {
-    console.log(`GalleryImage already has ${existing} rows — skipping seed.`);
+    console.log(`GalleryImage already has ${existing} rows -- skipping seed.`);
     return;
   }
 

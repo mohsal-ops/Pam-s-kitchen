@@ -75,7 +75,7 @@ export default async function BlogPage() {
       {/* Show message if no blog posts yet */}
       {posts.length === 0 && (
         <div className="py-40 text-center text-muted-foreground">
-          <p className="text-xl text-gray-500">No stories yet — check back soon.</p>
+          <p className="text-xl text-gray-500">No stories yet -- check back soon.</p>
         </div>
       )}
 

@@ -47,7 +47,7 @@ const REVIEWS = [
 async function main() {
   const existing = await db.review.count();
   if (existing > 0) {
-    console.log(`Review already has ${existing} rows — skipping seed.`);
+    console.log(`Review already has ${existing} rows -- skipping seed.`);
     return;
   }
 
