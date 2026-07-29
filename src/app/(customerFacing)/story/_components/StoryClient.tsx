@@ -105,7 +105,7 @@ export default function StoryClient({
             alt="The Pam's Kitchen experience"
             width={800}
             height={600}
-            className="rounded-3xl object-cover w-full h-full aspect-4/3"
+            className="rounded-3xl object-top object-cover w-full h-full aspect-4/3"
           />
         </motion.div>
       </section>
