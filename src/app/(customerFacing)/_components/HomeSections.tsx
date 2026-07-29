@@ -89,8 +89,8 @@ export function OrderDirectlyfromOUrWebsite() {
       <Image
         src={mainImg}
         alt={`${SITE_CONFIG.name} homemade food plated and ready to order`}
-        // sizes="(max-width: 640px) 100vw"
-        className="object-cover w-full h-full"
+        sizes="(max-width: 640px) 100vw"
+        className="object-cover w-full h-full rounded-3xl"
       />
     </div>
   );
@@ -100,7 +100,7 @@ export function DistinctiveFeatures() {
   const [first, second] = SITE_CONFIG.home.distinctiveFeatures;
   return (
     <div className="flex flex-col space-y-5 md:w-[85vw] rounded-3xl overflow-hidden ">
-      <div className="flex md:flex-row flex-col justify-between  md:h-132 h-full">
+      <div className="flex md:flex-row flex-col justify-between  md:h-132 h-full ">
         <Image
           src={first.image}
           alt={first.title}
