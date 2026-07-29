@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   name: "Pam's Kitchen",
   tagline: "Fresh homemade meals served daily",
   subTagline:
-    "Breakfast all day, burgers, pizza, and daily specials — homemade comfort food in Friona, TX.",
+    "Breakfast all day, burgers, pizza, and daily specials, homemade comfort food in Friona, TX.",
   legalName: "Pam's Kitchen",
   trademark: "Pam's Kitchen",
 
@@ -55,13 +55,13 @@ export const SITE_CONFIG = {
 
   // Hours (used for open/closed status) — hour values are 24h local time
   hours: [
-    { day: "Sunday", open: 8, close: 15 },
-    { day: "Monday", open: 7, close: 20 },
-    { day: "Tuesday", open: 7, close: 20 },
-    { day: "Wednesday", open: 7, close: 20 },
-    { day: "Thursday", open: 7, close: 20 },
-    { day: "Friday", open: 7, close: 20 },
-    { day: "Saturday", open: 7, close: 20 },
+    { day: "Sunday", open: 8, close: 18 },
+    { day: "Monday", open: 6, close: 21 },
+    { day: "Tuesday", open: 6, close: 21 },
+    { day: "Wednesday", open: 6, close: 21 },
+    { day: "Thursday", open: 6, close: 21 },
+    { day: "Friday", open: 6, close: 21 },
+    { day: "Saturday", open: 6, close: 21 },
   ] as { day: string; open: number | null; close: number | null }[],
 
   // Home page text sections

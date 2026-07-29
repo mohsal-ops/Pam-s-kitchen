@@ -42,8 +42,10 @@ export function OurLocation({
       open: h.open === null ? "Closed" : formatHour(h.open),
       close: h.close === null ? "" : formatHour(h.close),
     }));
-  const todayIdx = new Date(new Date().toLocaleString("en-US", { timeZone: SITE_CONFIG.timezone })).getDay();
-  const today = HOURS[todayIdx];
+  const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const todayName = new Date().toLocaleDateString("en-US", { timeZone: SITE_CONFIG.timezone, weekday: "long" });
+  const todayIdx = DAY_NAMES.indexOf(todayName);
+  const today = HOURS.find((h) => h.day === todayName);
   const todayLabel = !today
     ? "Hours available soon"
     : today.open === "Closed"

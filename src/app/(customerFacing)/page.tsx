@@ -95,7 +95,7 @@ function FaqSchema() {
               name: "What are you known for?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Homemade comfort food — hand-pressed burgers, all-day breakfast, and our daily specials.",
+                text: "Homemade comfort food, hand-pressed burgers, all-day breakfast, and our daily specials.",
               },
             },
             {
