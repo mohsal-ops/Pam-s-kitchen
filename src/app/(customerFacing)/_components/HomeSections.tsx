@@ -30,15 +30,15 @@ import { SITE_CONFIG } from "@/lib/siteConfig";
 
 export function TopSection({ heroImage }: { heroImage: string }) {
   return (
-    <div className="flex relative overflow-hidden h-svh sm:flex-row sm:w-[85%] flex-col bg-stone-100 sm:rounded-3xl sm:p-2">
+    <div className="flex relative overflow-hidden h-svh w-full sm:w-[85%] flex-col sm:flex-row bg-stone-100 sm:rounded-3xl sm:p-2">
       <div className="sm:relative absolute z-30 bottom-20 flex flex-col gap-6 items-start justify-end mt-10 md:mb-20 md:w-1/2 p-5 md:p-12">
-        <Image
+        {/* <Image
           alt={`${SITE_CONFIG.name} logo`}
           src={Logo}
           width={120}
           height={120}
           className="h-28 w-28 rounded-full object-cover shadow-lg"
-        />
+        /> */}
 
         <span className="lg:text-5xl text-white sm:text-black text-4xl font-bold leading-10 lg:leading-15">
           <h1 className="text-yellow-400">{SITE_CONFIG.home.heroHeadline}</h1>{" "}
@@ -55,7 +55,7 @@ export function TopSection({ heroImage }: { heroImage: string }) {
         </Link>
       </div>
 
-      <div className="relative md:w-1/2 w-full sm:rounded-3xl overflow-hidden h-full">
+      <div className="relative w-full md:w-1/2 sm:rounded-3xl overflow-hidden h-svh sm:h-full">
         <Image
           priority
           fill
@@ -64,7 +64,7 @@ export function TopSection({ heroImage }: { heroImage: string }) {
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
         />
-        <div className="sm:hidden absolute top-0 bg-auto bg-black/30 backdrop-blur-none z-20 w-full h-full"></div>
+        <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent z-20"></div>
       </div>
     </div>
   );
