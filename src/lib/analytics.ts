@@ -41,6 +41,13 @@ import type { protos } from "@google-analytics/data";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
+type AnalyticsError = {
+  details?: string;
+  message?: string;
+  status?: number;
+  code?: number;
+};
+
 export type TrafficData = {
   uniqueVisitors: number;
   totalVisits: number;
@@ -142,7 +149,6 @@ const credentials = {
 
 // GA4_PROPERTY_ID must be ONLY the number — no "properties/" prefix, no "G-" prefix
 const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID!;
-const PAGESPEED_API_KEY = process.env.PAGESPEED_API_KEY;
 const SITE_URL = process.env.SITE_URL!;
 
 const ga4 = new BetaAnalyticsDataClient({ credentials });
@@ -166,7 +172,7 @@ async function runGA4(request: Omit<GA4ReportRequest, "property">) {
     });
 
     return response;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(
       "GA4 REQUEST FAILED:",
       JSON.stringify(request, null, 2)
@@ -174,7 +180,7 @@ async function runGA4(request: Omit<GA4ReportRequest, "property">) {
 
     console.error(
       "GA4 ERROR:",
-      error.details || error.message
+      (error as AnalyticsError).details || (error as AnalyticsError).message
     );
 
     throw error;
@@ -235,8 +241,8 @@ export async function getTrafficData(): Promise<TrafficData> {
       bounceRateDelta: br - brP,
       
     };
-  } catch (e: any) {
-    const msg = e?.details || e?.message || String(e);
+  } catch (e: unknown) {
+    const msg = (e as AnalyticsError).details || (e as AnalyticsError).message || String(e);
     console.error("[getTrafficData]", msg);
     debugLog("getTrafficData ERROR", e);
     return { ...fallback, _error: msg };
@@ -265,8 +271,8 @@ export async function getDailyTraffic(): Promise<DailyPoint[]> {
         sessions: parseNum(row.metricValues?.[1]?.value),
       };
     });
-  } catch (e: any) {
-    console.error("[getDailyTraffic]", e?.details || e?.message);
+  } catch (e: unknown) {
+    console.error("[getDailyTraffic]", (e as AnalyticsError).details || (e as AnalyticsError).message);
     return [];
   }
 }
@@ -320,8 +326,8 @@ export async function getEngagementData(): Promise<EngagementData> {
       topExitPage,
       exitRate,
     };
-  } catch (e: any) {
-    const msg = e?.details || e?.message || String(e);
+  } catch (e: unknown) {
+    const msg = (e as AnalyticsError).details || (e as AnalyticsError).message || String(e);
     console.error("[getEngagementData]", msg);
     return { ...fallback, _error: msg };
   }
@@ -351,8 +357,8 @@ export async function getTrafficSources(): Promise<TrafficSource[]> {
         percentage: totalSessions === 0 ? 0 : Math.round((sessions / totalSessions) * 100),
       };
     });
-  } catch (e: any) {
-    console.error("[getTrafficSources]", e?.details || e?.message);
+  } catch (e: unknown) {
+    console.error("[getTrafficSources]", (e as AnalyticsError).details || (e as AnalyticsError).message);
     return [];
   }
 }
@@ -380,8 +386,8 @@ export async function getTopPages(): Promise<PageData[]> {
         exitRate: Math.round(parseFloat2(row.metricValues?.[2]?.value) * 100),
       };
     });
-  } catch (e: any) {
-    console.error("[getTopPages]", e?.details || e?.message);
+  } catch (e: unknown) {
+    console.error("[getTopPages]", (e as AnalyticsError).details || (e as AnalyticsError).message);
     return [];
   }
 }
@@ -406,8 +412,8 @@ export async function getConversionData(): Promise<ConversionData> {
       goalCompletions: goals,
       goalsDelta: goals - prevGoals,
     };
-  } catch (e: any) {
-    const msg = e?.details || e?.message || String(e);
+  } catch (e: unknown) {
+    const msg = (e as AnalyticsError).details || (e as AnalyticsError).message || String(e);
     console.error("[getConversionData]", msg);
     return { ...fallback, _error: msg };
   }
@@ -435,8 +441,8 @@ export async function getDeviceData(): Promise<DeviceData[]> {
         value: total === 0 ? 0 : Math.round((sessions / total) * 100),
       };
     });
-  } catch (e: any) {
-    console.error("[getDeviceData]", e?.details || e?.message);
+  } catch (e: unknown) {
+    console.error("[getDeviceData]", (e as AnalyticsError).details || (e as AnalyticsError).message);
     return [];
   }
 }
@@ -480,11 +486,11 @@ export async function getSeoData(): Promise<SeoData> {
         ctr: parseFloat(((row.ctr ?? 0) * 100).toFixed(1)),
       })),
     };
-  } catch (e: any) {
-    const status = e?.status ?? e?.code ?? "unknown";
+  } catch (e: unknown) {
+    const status = (e as AnalyticsError)?.status ?? (e as AnalyticsError)?.code ?? "unknown";
     const msg = status === 403
       ? "403 — service account missing from Search Console or wrong SITE_URL format"
-      : `Error ${status}: ${e?.message}`;
+      : `Error ${status}: ${(e as AnalyticsError)?.message}`;
     console.error("[getSeoData]", msg);
     return { ...fallback, _error: msg };
   }
@@ -541,7 +547,7 @@ export async function getPageSpeedData(
       cls: audits?.["cumulative-layout-shift"]?.displayValue  ?? "–",
       tbt: audits?.["total-blocking-time"]?.displayValue      ?? "–",
     };
-  } catch (e: any) {
-    return { ...fallback, _error: e?.message };
+  } catch (e: unknown) {
+    return { ...fallback, _error: (e as AnalyticsError).message };
   }
 }
