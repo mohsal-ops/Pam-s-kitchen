@@ -13,7 +13,7 @@ type ToasterToast = ToastProps & {
   title?: React.ReactNode;
   description?: React.ReactNode;
   action?: ToastActionElement;
-  variant?: "destructive" | "default" | "info"; // ✅ add this line
+  variant?: "destructive" | "default" | "info"; 
 
 };
 
@@ -31,29 +31,7 @@ function genId() {
   return count.toString();
 }
 
-type ActionType = typeof actionTypes;
 
-type Action =
-  | {
-      type: ActionType["ADD_TOAST"];
-      toast: ToasterToast;
-    }
-  | {
-      type: ActionType["UPDATE_TOAST"];
-      toast: Partial<ToasterToast>;
-    }
-  | {
-      type: ActionType["DISMISS_TOAST"];
-      toastId?: ToasterToast["id"];
-    }
-  | {
-      type: ActionType["REMOVE_TOAST"];
-      toastId?: ToasterToast["id"];
-    };
-
-interface State {
-  toasts: ToasterToast[];
-}
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
