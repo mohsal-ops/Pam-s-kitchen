@@ -14,7 +14,7 @@ const TABS = [
     label: "Site photos",
     icon: ImageIcon,
     blurb:
-      "Fixed spots on your site — the home page hero and the Our Story photos. Each slot holds one specific image.",
+      "Fixed spots on your site, the home page hero and the Our Story photos. Each slot holds one specific image.",
   },
   {
     id: "gallery" as const,
@@ -76,7 +76,7 @@ export default function MediaTabs({
       </div>
 
       {/* Both stay mounted (kept in the DOM) so switching tabs never loses an
-          in-progress upload or a reordered gallery — just hide the inactive one. */}
+          in-progress upload or a reordered gallery - just hide the inactive one. */}
       <div className={tab === "site" ? "" : "hidden"}>
         <SiteImageManager images={siteImages} />
       </div>

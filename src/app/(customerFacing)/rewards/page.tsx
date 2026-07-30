@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Rewards | Earn Points on Jerk Chicken & Wings",
   description:
-    "Join Pam's Kitchen Rewards in Houston, TX — earn points on every jerk chicken and wings order and redeem them for free sides and combos. No app required.",
+    "Join Pam's Kitchen Rewards in Houston, TX - earn points on every jerk chicken and wings order and redeem them for free sides and combos. No app required.",
   keywords: [
     "restaurant rewards Houston",
     "loyalty program Houston restaurant",

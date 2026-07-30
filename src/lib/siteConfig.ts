@@ -53,7 +53,7 @@ export const SITE_CONFIG = {
   secondaryColor: "#1a6b3c",
   accentColor: "#d97706",
 
-  // Hours (used for open/closed status) — hour values are 24h local time
+  // Hours (used for open/closed status) - hour values are 24h local time
   hours: [
     { day: "Sunday", open: 8, close: 18 },
     { day: "Monday", open: 6, close: 21 },
@@ -94,7 +94,7 @@ export const SITE_CONFIG = {
       {
         question: "What are you known for?",
         answer:
-          "Homemade comfort food — hand-pressed burgers, all-day breakfast, and our daily specials.",
+          "Homemade comfort food - hand-pressed burgers, all-day breakfast, and our daily specials.",
       },
       {
         question: "What meals do you serve?",

@@ -111,7 +111,7 @@ export function ReviewsSection({ reviews }: { reviews: ReviewData[] }) {
         ))}
       </div>
 
-      {/* Floating comment card — reads over the site without lengthening it. */}
+      {/* Floating comment card - reads over the site without lengthening it. */}
       {active && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"

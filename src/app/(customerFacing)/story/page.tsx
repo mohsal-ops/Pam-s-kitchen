@@ -6,7 +6,7 @@ import { getSiteImage } from "@/lib/getSiteImages";
 export const metadata: Metadata = {
   title: "Our Story | Homemade Comfort Food in Friona, TX",
   description:
-    "The story behind Pam's Kitchen — a family-owned kitchen in Friona, TX serving fresh homemade breakfast, burgers, and daily specials.",
+    "The story behind Pam's Kitchen - a family-owned kitchen in Friona, TX serving fresh homemade breakfast, burgers, and daily specials.",
   keywords: [
     "Pam's Kitchen Friona story",
     "family owned restaurant Friona",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Story | Pam's Kitchen Friona",
     description:
-      "The family story behind Pam's Kitchen — homemade comfort food in Friona, TX.",
+      "The family story behind Pam's Kitchen - homemade comfort food in Friona, TX.",
     url: "/story",
   },
 };

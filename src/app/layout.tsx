@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
 
   // ── FAVICON ──────────────────────────────────────────────────────────────
-  // Set here (root layout) so every route gets it — a page-level metadata
+  // Set here (root layout) so every route gets it - a page-level metadata
   // export only applies to that one route, not its siblings.
   icons: {
     icon: "/logo.png",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `Catering | ${SITE_CONFIG.name} ${SITE_CONFIG.city}`,
-    description: `Homemade comfort-food catering — breakfast, burgers, pizza, wings, and daily specials for events in ${SITE_CONFIG.city}, ${SITE_CONFIG.state}.`,
+    description: `Homemade comfort-food catering - breakfast, burgers, pizza, wings, and daily specials for events in ${SITE_CONFIG.city}, ${SITE_CONFIG.state}.`,
     url: "/catering",
   },
 };

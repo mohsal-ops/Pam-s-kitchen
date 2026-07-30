@@ -88,7 +88,7 @@ export default function StoryClient({
           <p className="text-gray-600 text-lg leading-relaxed">
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             From all-day breakfast to hand-pressed burgers and daily specials,
-            everything is made from scratch with care — the way comfort food is
+            everything is made from scratch with care - the way comfort food is
             meant to be.
           </p>
         </motion.div>
@@ -110,7 +110,7 @@ export default function StoryClient({
         </motion.div>
       </section>
 
-      {/* ── MEET THE OWNERS — hidden for mockup (bios/photos come from DB) ── */}
+      {/* ── MEET THE OWNERS - hidden for mockup (bios/photos come from DB) ── */}
       {false && (
       <section className="w-full bg-stone-50 py-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
@@ -226,7 +226,7 @@ export default function StoryClient({
             {
               icon: "🏡",
               title: "Family First",
-              text: "Lorem ipsum dolor sit amet. Every recipe is made the way home tastes — with love, care, and nothing to hide.",
+              text: "Lorem ipsum dolor sit amet. Every recipe is made the way home tastes - with love, care, and nothing to hide.",
             },
             {
               icon: "🍳",
@@ -278,7 +278,7 @@ export default function StoryClient({
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Friona&apos;s
-              appetite for fresh homemade food is wide open — and Pam&apos;s Kitchen
+              appetite for fresh homemade food is wide open - and Pam&apos;s Kitchen
               is here to fill it, one plate at a time.
             </p>
             <a

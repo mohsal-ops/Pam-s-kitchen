@@ -16,7 +16,7 @@ export default async function MediaPage() {
       <div className="p-5 space-y-4 w-full lg:w-[85%]">
         <PageHeader>Media</PageHeader>
         <p className="text-sm text-stone-500 px-4 md:px-0">
-          All your site photos in one place — the fixed site images and your
+          All your site photos in one place -- the fixed site images and your
           homepage gallery.
         </p>
         <MediaTabs siteImages={siteImages} galleryImages={galleryImages} />

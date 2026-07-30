@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Menu | Pam's Kitchen Houston",
     description:
-      "Jerk chicken, wings, loaded fries, sandwiches, and family feasts — order online for pickup or delivery in Houston, TX.",
+      "Jerk chicken, wings, loaded fries, sandwiches, and family feasts - order online for pickup or delivery in Houston, TX.",
     url: "/Menu",
   },
 }

@@ -60,7 +60,7 @@ export default function GiftCardPageClient() {
   }, [price]);
 
   // Stripe.js appends controller/Link iframes to <body> that survive Next's
-  // client-side navigation — remove them when leaving this page so the floating
+  // client-side navigation - remove them when leaving this page so the floating
   // Stripe/Link widget doesn't linger across the rest of the site.
   useEffect(() => {
     return () => {

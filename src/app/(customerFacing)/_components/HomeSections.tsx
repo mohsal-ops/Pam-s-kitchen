@@ -80,7 +80,7 @@ export function SecondSection({
   return <SecondSectionFeatured products={products} cartItems={cartItems} />;
 }
 
-// Reviews moved to ./ReviewsSection.tsx (client component — adaptive grid +
+// Reviews moved to ./ReviewsSection.tsx (client component - adaptive grid +
 // "Read more" floating card for long reviews).
 
 export function OrderDirectlyfromOUrWebsite() {

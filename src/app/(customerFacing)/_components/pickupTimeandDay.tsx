@@ -411,7 +411,7 @@ export function PickupDetailsContent({
   );
 }
 
-/* Standalone Dialog wrapper — used directly from mainPage.tsx's (currently disabled) toggle. */
+/* Standalone Dialog wrapper - used directly from mainPage.tsx's (currently disabled) toggle. */
 export default function PickupDetails({
   open,
   onOpenChange,

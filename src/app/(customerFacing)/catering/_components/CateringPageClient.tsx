@@ -18,7 +18,7 @@ import img from "public/general/generalPages/enjoy.jpg";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 // Sample/test catering packages for preview. Swap prices/items for the real
-// menu later (or wire to the dashboard) — this replaces the old PDF download.
+// menu later (or wire to the dashboard) - this replaces the old PDF download.
 const CATERING_PACKAGES: {
   name: string;
   serves: string;
@@ -27,7 +27,7 @@ const CATERING_PACKAGES: {
 }[] = [
   {
     name: "All-Day Breakfast Spread",
-    serves: "Serves 10–12",
+    serves: "Serves 10-12",
     price: "$120",
     items: [
       "Scrambled eggs & crispy bacon",
@@ -38,7 +38,7 @@ const CATERING_PACKAGES: {
   },
   {
     name: "Burger Bar",
-    serves: "Serves 10–12",
+    serves: "Serves 10-12",
     price: "$140",
     items: [
       "Hand-pressed beef sliders",
@@ -49,7 +49,7 @@ const CATERING_PACKAGES: {
   },
   {
     name: "Homemade Pizza Party",
-    serves: "Serves 12–15",
+    serves: "Serves 12-15",
     price: "$130",
     items: [
       "Pepperoni, cheese & supreme pizzas",
@@ -233,7 +233,7 @@ export default function CateringPageClient() {
         <div className="space-y-2 text-center">
           <h2 className="text-3xl font-bold">Catering Menu</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            Sample packages to get you started — mix, match, or ask for
+            Sample packages to get you started - mix, match, or ask for
             something custom. Request a quote for exact pricing based on your
             headcount.
           </p>
@@ -270,7 +270,7 @@ export default function CateringPageClient() {
 
         <div className="flex flex-col items-center gap-3 pt-2">
           <p className="text-sm text-gray-400 text-center">
-            Sample menu for preview — prices are estimates and fully
+            Sample menu for preview - prices are estimates and fully
             customizable.
           </p>
           <Button variant="mainButton" size="lg" onClick={() => setOpen(true)}>

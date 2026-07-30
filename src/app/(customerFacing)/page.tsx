@@ -80,7 +80,7 @@ export const metadata: Metadata = {
 };
 
 function FaqSchema() {
-  // Mirrors the questions/answers rendered in Frequentlyaskedquestions below —
+  // Mirrors the questions/answers rendered in Frequentlyaskedquestions below -
   // keep these in sync if that content changes.
   return (
     <script

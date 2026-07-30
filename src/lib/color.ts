@@ -1,4 +1,4 @@
-// Returns black or white — whichever is readable on top of `hex`.
+// Returns black or white - whichever is readable on top of `hex`.
 // Uses perceived luminance so light brand colors get black text and dark
 // ones get white text.
 export function readableTextColor(hex: string): "#000000" | "#ffffff" {
