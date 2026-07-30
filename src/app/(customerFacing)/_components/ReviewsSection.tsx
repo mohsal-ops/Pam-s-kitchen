@@ -20,7 +20,7 @@ const LONG_THRESHOLD = 200;
 
 function Stars() {
   return (
-    <div className="flex gap-1 text-yellow-400" aria-label="5 out of 5 stars">
+    <div className="flex gap-1 text-brand" aria-label="5 out of 5 stars">
       {[...Array(5)].map((_, i) => (
         <FaStar key={i} aria-hidden="true" />
       ))}
@@ -60,7 +60,7 @@ function ReviewCard({
             <button
               type="button"
               onClick={onOpen}
-              className="mt-2 text-sm font-semibold text-yellow-600 hover:underline"
+              className="mt-2 text-sm font-semibold text-brand-dark hover:underline"
             >
               Read more
             </button>

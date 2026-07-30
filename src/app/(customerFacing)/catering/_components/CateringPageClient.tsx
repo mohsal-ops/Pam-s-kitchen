@@ -170,7 +170,7 @@ export default function CateringPageClient() {
         </div>
 
         <div className="md:w-1/2  p-2 sm:p-4 text-center md:text-left space-y-4 z-10">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-yellow-400 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-brand drop-shadow-lg">
             Bring {SITE_CONFIG.name} to Your Event
           </h1>
           <p className="text-lg md:text-xl text-white drop-shadow-lg">
@@ -180,7 +180,7 @@ export default function CateringPageClient() {
           <div className="flex gap-4 justify-center md:justify-start  ">
             <Button
               variant="mainButton"
-              className="drop-shadow-lg hover:bg-yellow-500"
+              className="drop-shadow-lg hover:bg-brand-dark"
               size="lg"
               onClick={() => setOpen(true)}
             >
@@ -251,14 +251,14 @@ export default function CateringPageClient() {
                     <h3 className="text-xl font-bold">{pkg.name}</h3>
                     <p className="text-sm text-gray-500">{pkg.serves}</p>
                   </div>
-                  <span className="whitespace-nowrap text-lg font-extrabold text-yellow-600">
+                  <span className="whitespace-nowrap text-lg font-extrabold text-brand-dark">
                     {pkg.price}
                   </span>
                 </div>
                 <ul className="space-y-1.5 text-gray-700">
                   {pkg.items.map((item, j) => (
                     <li key={j} className="flex gap-2">
-                      <span className="text-yellow-500">•</span>
+                      <span className="text-brand-dark">•</span>
                       <span>{item}</span>
                     </li>
                   ))}

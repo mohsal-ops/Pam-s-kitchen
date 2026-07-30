@@ -3,6 +3,7 @@ import { CartProvider } from "./providers/CartProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 import { getBusinessHours } from "@/lib/getHours";
+import { getThemeColor, DEFAULT_THEME_COLOR } from "@/lib/siteSettings";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -93,9 +94,17 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const businessHours = await getBusinessHours();
+  const rawColor = await getThemeColor();
+  // Only allow a hex color to reach the injected <style> (no CSS injection).
+  const themeColor = /^#[0-9a-fA-F]{3,8}$/.test(rawColor)
+    ? rawColor
+    : DEFAULT_THEME_COLOR;
   return (
     <html lang="en">
       <head>
+        <style
+          dangerouslySetInnerHTML={{ __html: `:root{--brand:${themeColor}}` }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

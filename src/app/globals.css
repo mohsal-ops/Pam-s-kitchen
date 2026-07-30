@@ -4,6 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Brand color — themeable from admin (SiteSetting "theme_color").
+   --brand is overridden at runtime by a <style> tag in the root layout;
+   --brand-dark auto-derives a readable darker shade for text/hover. */
+@theme {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+}
+
 
 .LcvUkwqF__Container {
   display: none !important;
@@ -60,6 +68,10 @@ html body[data-scroll-locked] {
   --sidebar-width-icon: 6rem;
   --sidebar-transition: 300ms; /* animation duration/ease */
 
+  /* Brand accent (themeable via admin → Branding). Defaults to the current
+     yellow; --brand-dark auto-derives a readable shade for text/hover. */
+  --brand: #facc15;
+  --brand-dark: color-mix(in srgb, var(--brand) 70%, black);
 
   --background: 0 0% 100%;
   --foreground: 222.2 47.4% 11.2%;
