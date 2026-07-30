@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { updateThemeColor, updateLogo } from "../_actions/brandingActions";
+import { readableTextColor } from "@/lib/color";
 
 const PRESETS = [
   "#facc15",
@@ -108,8 +109,8 @@ export default function BrandingManager({
           </p>
           <div className="flex items-center gap-3">
             <span
-              className="rounded-lg px-4 py-2 text-sm font-bold text-black"
-              style={{ background: color }}
+              className="rounded-lg px-4 py-2 text-sm font-bold"
+              style={{ background: color, color: readableTextColor(color) }}
             >
               Order now
             </span>
