@@ -14,6 +14,7 @@ import db from "@/db/db";
 import { getBusinessHours } from "@/lib/getHours";
 import { getSiteImage } from "@/lib/getSiteImages";
 import { getHomeText } from "@/lib/siteSettings";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import {
   TopSection,
   SecondSection,
@@ -151,8 +152,11 @@ async function FeaturedProductsSection() {
 async function LocationSection() {
   const [placesRes, hours] = await Promise.all([GetPlaces(), getBusinessHours()]);
   const places = placesRes?.places ?? [];
-  const lat = places[0]?.lat ?? 0;
-  const lng = places[0]?.lng ?? 0;
+  // Fall back to the address in siteConfig when no location row exists yet
+  // (fresh DB / not filled in the dashboard) so the map centers on the real
+  // restaurant instead of 0,0 in the ocean.
+  const lat = places[0]?.lat ?? SITE_CONFIG.lat;
+  const lng = places[0]?.lng ?? SITE_CONFIG.lng;
 
   return <OurLocation places={places} lat={lat} lng={lng} hours={hours} />;
 }
