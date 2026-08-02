@@ -13,6 +13,7 @@ import HomeFeaturedSkeleton from "./_skeletons/HomeFeaturedSkeleton";
 import db from "@/db/db";
 import { getBusinessHours } from "@/lib/getHours";
 import { getSiteImage } from "@/lib/getSiteImages";
+import { getHomeText } from "@/lib/siteSettings";
 import {
   TopSection,
   SecondSection,
@@ -171,12 +172,28 @@ export default async function Home() {
   // heavier DB-backed sections stream in behind Suspense so they aren't
   // blocked on the featured-products and places queries. The hero image is a
   // single indexed lookup, cheap enough to await directly here.
-  const heroImage = await getSiteImage("home_hero");
+  const [
+    heroImage,
+    orderImage,
+    featureBreakfast,
+    featureComfort,
+    homeText,
+  ] = await Promise.all([
+    getSiteImage("home_hero"),
+    getSiteImage("home_order"),
+    getSiteImage("home_feature_breakfast"),
+    getSiteImage("home_feature_comfort"),
+    getHomeText(),
+  ]);
 
   return (
     <div className="flex  pt-20 flex-col gap-5 items-center justify-center    [&>*:not(:first-child)]:m-2">
       <FaqSchema />
-      <TopSection heroImage={heroImage} />
+      <TopSection
+        heroImage={heroImage}
+        headline={homeText.headline}
+        subheadline={homeText.subheadline}
+      />
       <SectionDivider />
       <Suspense fallback={<HomeFeaturedSkeleton />}>
         <FeaturedProductsSection />
@@ -194,7 +211,7 @@ export default async function Home() {
       <SectionDivider />
       <FadeIn delay={200}>
         <div className="p-2 w-full flex justify-center">
-          <OrderDirectlyfromOUrWebsite />
+          <OrderDirectlyfromOUrWebsite image={orderImage} />
         </div>
       </FadeIn>
       <SectionDivider />
@@ -205,7 +222,9 @@ export default async function Home() {
       </FadeIn>
       <SectionDivider />
       <FadeIn delay={400}>
-        <DistinctiveFeatures />
+        <DistinctiveFeatures
+          images={{ breakfast: featureBreakfast, comfort: featureComfort }}
+        />
       </FadeIn>
       <SectionDivider />
       <FadeIn delay={500}>

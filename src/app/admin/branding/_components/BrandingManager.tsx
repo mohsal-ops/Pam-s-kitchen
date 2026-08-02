@@ -4,8 +4,14 @@ import { useRef, useState, useTransition } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { updateThemeColor, updateLogo } from "../_actions/brandingActions";
+import {
+  updateThemeColor,
+  updateLogo,
+  updateHomeText,
+} from "../_actions/brandingActions";
 import { readableTextColor } from "@/lib/color";
+import { ExternalLink } from "lucide-react";
+import SlotDiagram from "@/app/admin/images/_components/SlotDiagram";
 
 const PRESETS = [
   "#facc15",
@@ -21,10 +27,24 @@ const PRESETS = [
 export default function BrandingManager({
   initialColor,
   initialLogo,
+  initialHeadline,
+  initialSubheadline,
 }: {
   initialColor: string;
   initialLogo: string;
+  initialHeadline: string;
+  initialSubheadline: string;
 }) {
+  const [headline, setHeadline] = useState(initialHeadline);
+  const [subheadline, setSubheadline] = useState(initialSubheadline);
+  const [savingText, startText] = useTransition();
+
+  const saveText = () =>
+    startText(async () => {
+      const res = await updateHomeText(headline, subheadline);
+      if (res.ok) toast.success("Home text updated");
+      else toast.error(res.error ?? "Failed to save");
+    });
   const [color, setColor] = useState(initialColor);
   const [savingColor, startColor] = useTransition();
 
@@ -58,8 +78,78 @@ export default function BrandingManager({
   };
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 px-4 md:px-0">
-      {/* THEME COLOR */}
+    <div className="space-y-6 px-4 md:px-0">
+      {/* HOME HEADLINE */}
+      <div className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+        <div>
+          <h2 className="font-semibold text-stone-800">Home headline</h2>
+          <p className="text-sm text-stone-500">
+            The big headline and subtitle shown on your home page. Leave blank
+            to use the built-in text.
+          </p>
+        </div>
+        <div className="flex gap-3 rounded-xl border border-stone-200 bg-stone-50 p-3">
+          <div className="w-[42%] max-w-[150px] shrink-0 self-start">
+            <SlotDiagram
+              blocks={[
+                { k: "nav" },
+                { k: "split", side: "left", active: true },
+                { k: "text" },
+              ]}
+            />
+          </div>
+          <div className="flex min-w-0 flex-col justify-center gap-1">
+            <p className="text-[10px] font-semibold uppercase tracking-wide text-stone-400">
+              Where it appears
+            </p>
+            <p className="text-xs leading-snug text-stone-600">
+              The large headline at the very top of your home page, over the
+              hero.
+            </p>
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-medium text-[#c85a1e] hover:underline"
+            >
+              View Home page
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        </div>
+        <div className="space-y-3">
+          <div>
+            <label className="mb-1 block text-sm font-medium text-stone-600">
+              Headline
+            </label>
+            <input
+              type="text"
+              value={headline}
+              onChange={(e) => setHeadline(e.target.value)}
+              placeholder="e.g. Eagle Pass' viral Texas BBQ"
+              className="w-full rounded-lg border border-stone-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-stone-300"
+            />
+          </div>
+          <div>
+            <label className="mb-1 block text-sm font-medium text-stone-600">
+              Subheadline
+            </label>
+            <input
+              type="text"
+              value={subheadline}
+              onChange={(e) => setSubheadline(e.target.value)}
+              placeholder="e.g. brisket, ribs & sausage smoked daily"
+              className="w-full rounded-lg border border-stone-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-stone-300"
+            />
+          </div>
+        </div>
+        <Button variant="mainButton" disabled={savingText} onClick={saveText}>
+          {savingText ? "Saving..." : "Save text"}
+        </Button>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* THEME COLOR */}
       <div className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
         <div>
           <h2 className="font-semibold text-stone-800">Theme color</h2>
@@ -187,6 +277,7 @@ export default function BrandingManager({
         <p className="text-xs text-stone-400">
           A square PNG works best. Leave as-is to keep the current logo.
         </p>
+      </div>
       </div>
     </div>
   );

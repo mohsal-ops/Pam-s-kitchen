@@ -5,6 +5,9 @@ export const DEFAULT_SITE_IMAGES = [
   { key: "story_hero", url: "/general/generalPages/partners.jpg", label: "Our Story - Hero" },
   { key: "story_origin", url: "/general/generalPages/grandmother.jpg", label: "Our Story - Origin Section" },
   { key: "story_closing", url: "/general/generalPages/enjoy.jpg", label: "Our Story - Closing Section" },
+  { key: "home_order", url: "/general/generalPages/mainImage.jpg", label: "Home - Order Directly section" },
+  { key: "home_feature_breakfast", url: "/general/generalPages/enjoy.jpg", label: "Home - First Feature" },
+  { key: "home_feature_comfort", url: "/general/generalPages/vibe.jpg", label: "Home - Second Feature" },
 ];
 
 async function seedDefaults() {

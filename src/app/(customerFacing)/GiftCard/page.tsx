@@ -4,7 +4,7 @@ import GiftCardPageClient from "./_components/GiftCardPageClient";
 export const metadata: Metadata = {
   title: "Gift Cards | Send Texas BBQ to a Friend",
   description:
-    "Buy a The Wagon Wheel gift card online - perfect for Texas BBQ, and Caribbean-inspired food lovers in Eagle Pass, TX. Instant delivery, no expiration.",
+    "Buy a The Wagon Wheel gift card online - perfect for Texas BBQ and comfort-food lovers in Eagle Pass, TX. Instant delivery, no expiration.",
   keywords: [
     "restaurant gift card Eagle Pass",
     "The Wagon Wheel gift card",
