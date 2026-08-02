@@ -283,7 +283,7 @@ export default function StoryClient({
             </p>
             <a
               href="/Menu"
-              className="inline-flex items-center gap-2 bg-brand text-stone-900 font-semibold px-7 py-3 rounded-xl hover:bg-yellow-300 transition-colors text-sm"
+              className="inline-flex items-center gap-2 bg-brand text-brand-foreground font-semibold px-7 py-3 rounded-xl hover:bg-brand-dark transition-colors text-sm"
             >
               View our menu
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

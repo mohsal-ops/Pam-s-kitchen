@@ -146,7 +146,7 @@ export function DistinctiveFeatures({
           width={800}
           height={600}
           sizes="(max-width: 768px) 100vw, 45vw"
-          className="object-cover flex items-start bg-amber-200 md:order-2 order-1 md:w-[45%] w-full h-full rounded-3xl"
+          className="object-cover flex items-start bg-stone-200 md:order-2 order-1 md:w-[45%] w-full h-full rounded-3xl"
         />
       </div>
     </div>

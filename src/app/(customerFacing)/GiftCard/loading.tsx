@@ -13,7 +13,7 @@ export default function Loading() {
       <p className="text-gray-400 text-lg animate-pulse">Loading gift card payment…</p>
 
       <div className="flex justify-center">
-        <div className="w-12 h-12 border-4 border-yellow-400 border-t-black rounded-full animate-spin" />
+        <div className="w-12 h-12 border-4 border-brand border-t-black rounded-full animate-spin" />
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 import db from "@/db/db";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 
-// Default brand accent (the current yellow). Overridden by the "theme_color"
+// Default brand accent, pulled from siteConfig so a fresh DB (no theme_color
+// row yet) still uses the real brand color. Overridden by the "theme_color"
 // SiteSetting once the owner picks a color in admin → Branding.
-export const DEFAULT_THEME_COLOR = "#facc15";
+export const DEFAULT_THEME_COLOR = SITE_CONFIG.primaryColor;
 
 export async function getSetting(
   key: string,
