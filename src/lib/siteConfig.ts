@@ -13,12 +13,13 @@ export const SITE_CONFIG = {
 
   // Contact & Location
   // NOTE: exact street address + phone are placeholders - update with the real ones.
-  address: "Eagle Pass, TX 78852",
-  street: "Eagle Pass, TX",
+
+  address: "1824 Del Rio Blvd, Eagle Pass, TX 78852",
+  street: "1824 Del Rio Blvd",
   city: "Eagle Pass",
   state: "TX",
   zip: "78852",
-  phone: "",
+  phone: "830-513-7250",
   email: "info@thewagonwheel.co",
   cateringEmail: "info@thewagonwheel.co",
   timezone: "America/Chicago",
