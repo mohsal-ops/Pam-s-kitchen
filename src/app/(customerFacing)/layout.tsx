@@ -36,7 +36,7 @@ export default async function Customerlayout({
             >
               Vega Star Digital
             </a>{" "}
-            - MOHAMMED BENSALAH
+            - MOHAMMED B.
             {/* <Link
             href="/login"
             className="absolute right-1 text-xs text-stone-400 hover:text-stone-600"
