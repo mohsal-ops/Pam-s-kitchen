@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import GiftCardPageClient from "./_components/GiftCardPageClient";
 
 export const metadata: Metadata = {
-  title: "Gift Cards | Send Jerk Chicken & Wings to a Friend",
+  title: "Gift Cards | Send Texas BBQ to a Friend",
   description:
-    "Buy a Pam's Kitchen gift card online - perfect for jerk chicken, wings, and Caribbean-inspired food lovers in Houston, TX. Instant delivery, no expiration.",
+    "Buy a The Wagon Wheel gift card online - perfect for Texas BBQ, and Caribbean-inspired food lovers in Eagle Pass, TX. Instant delivery, no expiration.",
   keywords: [
-    "restaurant gift card Houston",
-    "Pam's Kitchen gift card",
-    "jerk chicken gift card",
+    "restaurant gift card Eagle Pass",
+    "The Wagon Wheel gift card",
+    "Texas BBQ gift card",
   ],
   alternates: {
     canonical: "/GiftCard",
   },
   openGraph: {
-    title: "Gift Cards | Pam's Kitchen Houston",
+    title: "Gift Cards | The Wagon Wheel Eagle Pass",
     description:
-      "Send a Pam's Kitchen gift card instantly - great for jerk chicken and wings lovers in Houston, TX.",
+      "Send a The Wagon Wheel gift card instantly - great for Texas BBQ lovers in Eagle Pass, TX.",
     url: "/GiftCard",
   },
 };

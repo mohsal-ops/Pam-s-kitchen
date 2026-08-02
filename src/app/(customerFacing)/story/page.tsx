@@ -4,22 +4,22 @@ import StoryClient from "./_components/StoryClient";
 import { getSiteImage } from "@/lib/getSiteImages";
 
 export const metadata: Metadata = {
-  title: "Our Story | Homemade Comfort Food in Friona, TX",
+  title: "Our Story | Homemade Comfort Food in Eagle Pass, TX",
   description:
-    "The story behind Pam's Kitchen - a family-owned kitchen in Friona, TX serving fresh homemade breakfast, burgers, and daily specials.",
+    "The story behind The Wagon Wheel - a family-owned kitchen in Eagle Pass, TX serving fresh homemade breakfast, burgers, and daily specials.",
   keywords: [
-    "Pam's Kitchen Friona story",
-    "family owned restaurant Friona",
-    "homemade food Friona history",
-    "Pam's Kitchen owners",
+    "The Wagon Wheel Eagle Pass story",
+    "family owned restaurant Eagle Pass",
+    "homemade food Eagle Pass history",
+    "The Wagon Wheel owners",
   ],
   alternates: {
     canonical: "/story",
   },
   openGraph: {
-    title: "Our Story | Pam's Kitchen Friona",
+    title: "Our Story | The Wagon Wheel Eagle Pass",
     description:
-      "The family story behind Pam's Kitchen - homemade comfort food in Friona, TX.",
+      "The family story behind The Wagon Wheel - homemade comfort food in Eagle Pass, TX.",
     url: "/story",
   },
 };

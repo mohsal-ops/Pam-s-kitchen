@@ -4,24 +4,24 @@ import MainPageMenu from './_components/mainPage'
 import { getBusinessHours } from '@/lib/getHours'
 
 export const metadata: Metadata = {
-  title: "Menu | Jerk Chicken, Wings & Loaded Fries",
+  title: "Menu | Brisket, Ribs Smoked Brisket & Loaded Fries Chicken Fried Steaks",
   description:
-    "Order jerk chicken, crispy wings, loaded fries, sandwiches, and family feasts online from Pam's Kitchen in Houston, TX. Pickup or delivery, kids menu included.",
+    "Order Texas BBQ, crispy BBQ plates, loaded fries, sandwiches, and family feasts online from The Wagon Wheel in Eagle Pass, TX. Pickup or delivery, kids menu included.",
   keywords: [
-    "jerk chicken Houston menu",
-    "jerk wings Houston",
-    "loaded fries Houston",
-    "fried chicken Houston order online",
-    "family dinners Houston",
-    "kids meal Houston restaurant",
+    "Texas BBQ Eagle Pass menu",
+    "BBQ Eagle Pass",
+    "loaded fries Eagle Pass",
+    "fried chicken Eagle Pass order online",
+    "family dinners Eagle Pass",
+    "kids meal Eagle Pass restaurant",
   ],
   alternates: {
     canonical: "/Menu",
   },
   openGraph: {
-    title: "Menu | Pam's Kitchen Houston",
+    title: "Menu | The Wagon Wheel Eagle Pass",
     description:
-      "Jerk chicken, wings, loaded fries, sandwiches, and family feasts - order online for pickup or delivery in Houston, TX.",
+      "Smoked brisket, ribs, sausage, and chicken fried steaks - order online for pickup or delivery in Eagle Pass, TX.",
     url: "/Menu",
   },
 }

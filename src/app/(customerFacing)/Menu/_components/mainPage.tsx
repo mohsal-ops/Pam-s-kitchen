@@ -224,7 +224,7 @@ export default function MainPageMenu({
           </p>
           <span className="flex text-sm space-x-2 justify-center sm:justify-start items-center font-semibold w-4/5 gap-1  text-neutral-600 text-center  ">
             <FaLocationPin className="md:block hidden" />
-            <p>2950 Gears Rd. Houston, TX 77067</p>
+            <p>2950 Gears Rd. Eagle Pass, TX 77067</p>
 
             <p className="flex items-center gap-1.5 text-sm font-medium">
               <span

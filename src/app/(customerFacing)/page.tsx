@@ -35,17 +35,17 @@ export type ItemWithSides = Item & {
 };
 
 export const metadata: Metadata = {
-  title: "Pam's Kitchen | Homemade Comfort Food & All-Day Breakfast in Friona, TX",
+  title: "The Wagon Wheel | Homemade Comfort Food & All-Day Breakfast in Eagle Pass, TX",
   description:
-    "Pam's Kitchen serves fresh homemade breakfast all day, hand-pressed burgers, homemade pizza, and daily specials in Friona, TX. A family-friendly kitchen with catering and gift cards.",
+    "The Wagon Wheel serves fresh homemade breakfast all day, hand-pressed burgers, homemade pizza, and daily specials in Eagle Pass, TX. A family-friendly kitchen with catering and gift cards.",
   keywords: [
-    "breakfast Friona TX",
-    "burgers Friona",
-    "homemade food Friona",
-    "daily specials Friona",
-    "pizza Friona",
-    "family restaurant Friona",
-    "Pam's Kitchen Friona",
+    "breakfast Eagle Pass TX",
+    "burgers Eagle Pass",
+    "homemade food Eagle Pass",
+    "daily specials Eagle Pass",
+    "pizza Eagle Pass",
+    "family restaurant Eagle Pass",
+    "The Wagon Wheel Eagle Pass",
   ],
   alternates: {
     canonical: "/",
@@ -54,17 +54,17 @@ export const metadata: Metadata = {
     icon: "/logo.png",
   },
   openGraph: {
-    title: "Pam's Kitchen | Homemade Comfort Food in Friona, TX",
+    title: "The Wagon Wheel | Homemade Comfort Food in Eagle Pass, TX",
     description:
-      "Fresh homemade breakfast all day, hand-pressed burgers, pizza, and daily specials at Pam's Kitchen in Friona, TX.",
+      "Fresh homemade breakfast all day, hand-pressed burgers, pizza, and daily specials at The Wagon Wheel in Eagle Pass, TX.",
     url: "/",
-    siteName: "Pam's Kitchen",
+    siteName: "The Wagon Wheel",
     images: [
       {
         url: "/general/generalPages/mainImage.jpg",
         width: 1200,
         height: 630,
-        alt: "Pam's Kitchen homemade food in Friona, TX",
+        alt: "The Wagon Wheel homemade food in Eagle Pass, TX",
       },
     ],
     locale: "en_US",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pam's Kitchen | Homemade Comfort Food in Friona, TX",
+    title: "The Wagon Wheel | Homemade Comfort Food in Eagle Pass, TX",
     description:
       "Homemade breakfast all day, burgers, pizza, and daily specials you'll crave.",
     images: ["/general/generalPages/mainImage.jpg"],
@@ -119,7 +119,7 @@ function FaqSchema() {
               name: "Where are you located?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "We're at 1302 W 11th St, Friona, TX 79035.",
+                text: "We're at 1302 W 11th St, Eagle Pass, TX 79035.",
               },
             },
           ],

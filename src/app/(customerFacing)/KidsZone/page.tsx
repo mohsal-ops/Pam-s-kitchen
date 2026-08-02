@@ -3,21 +3,21 @@ import GamesSection from "./components/sections/GamesSection";
 import HeroSection from "./components/sections/HeroSection";
 
 export const metadata: Metadata = {
-  title: "Kids Zone | Free Games for Kids at Pam's Kitchen",
+  title: "Kids Zone | Free Games for Kids at The Wagon Wheel",
   description:
-    "Pam's Kitchen is a family and kids restaurant in Houston, TX. While you wait for jerk chicken and wings, play free games in our Kids Zone.",
+    "The Wagon Wheel is a family and kids restaurant in Eagle Pass, TX. While you wait for Texas BBQ, play free games in our Kids Zone.",
   keywords: [
-    "kids restaurant Houston",
-    "family restaurant Houston",
-    "kids games Pam's Kitchen",
+    "kids restaurant Eagle Pass",
+    "family restaurant Eagle Pass",
+    "kids games The Wagon Wheel",
   ],
   alternates: {
     canonical: "/KidsZone",
   },
   openGraph: {
-    title: "Kids Zone | Pam's Kitchen Houston",
+    title: "Kids Zone | The Wagon Wheel Eagle Pass",
     description:
-      "A family-friendly Houston restaurant with a Kids Zone full of free games.",
+      "A family-friendly Eagle Pass restaurant with a Kids Zone full of free games.",
     url: "/KidsZone",
   },
 };

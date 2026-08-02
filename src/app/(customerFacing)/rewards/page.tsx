@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rewards | Earn Points on Jerk Chicken & Wings",
+  title: "Rewards | Earn Points on Texas BBQ",
   description:
-    "Join Pam's Kitchen Rewards in Houston, TX - earn points on every jerk chicken and wings order and redeem them for free sides and combos. No app required.",
+    "Join The Wagon Wheel Rewards in Eagle Pass, TX - earn points on every Texas BBQ order and redeem them for free sides and combos. No app required.",
   keywords: [
-    "restaurant rewards Houston",
-    "loyalty program Houston restaurant",
-    "Pam's Kitchen rewards",
+    "restaurant rewards Eagle Pass",
+    "loyalty program Eagle Pass restaurant",
+    "The Wagon Wheel rewards",
   ],
   alternates: {
     canonical: "/rewards",
   },
   openGraph: {
-    title: "Rewards | Pam's Kitchen Houston",
+    title: "Rewards | The Wagon Wheel Eagle Pass",
     description:
-      "Earn points on every order and redeem them for free sides and combos at Pam's Kitchen.",
+      "Earn points on every order and redeem them for free sides and combos at The Wagon Wheel.",
     url: "/rewards",
   },
 };
@@ -46,7 +46,7 @@ export default function RewardsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-yellow-200 text-lg">
-            Every order earns points that turn into free Pam's Kitchen meals.
+            Every order earns points that turn into free The Wagon Wheel meals.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function RewardsPage() {
           <div className="rounded-2xl bg-linear-to-br from-yellow-400 to-yellow-300 p-8 shadow-2xl -rotate-3">
             <div className="flex justify-between items-center mb-10">
               <span className="font-bold text-black text-xl">
-                Pam's Kitchen
+                The Wagon Wheel
               </span>
               <span className="text-black/70">Rewards</span>
             </div>

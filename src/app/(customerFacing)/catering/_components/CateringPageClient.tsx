@@ -59,11 +59,11 @@ const CATERING_PACKAGES: {
     ],
   },
   {
-    name: "Wings & Sides Tray",
-    serves: "50 wings",
+    name: "Brisket BBQ plates & Sides Tray Sides Tray",
+    serves: "50 BBQ plates",
     price: "$95",
     items: [
-      "Crispy bone-in wings",
+      "Crispy bone-in BBQ plates",
       "Buffalo, BBQ & plain",
       "Celery & carrot sticks",
       "Ranch & blue cheese",

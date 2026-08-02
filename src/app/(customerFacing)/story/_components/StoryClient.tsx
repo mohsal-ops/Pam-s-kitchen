@@ -24,7 +24,7 @@ export default function StoryClient({
       <section className="relative w-full h-[90vh] flex items-end justify-start">
         <Image
           src={images.story_hero}
-          alt="Pam's Kitchen story hero"
+          alt="The Wagon Wheel story hero"
           fill
           priority
           className="object-cover brightness-[0.45]"
@@ -102,7 +102,7 @@ export default function StoryClient({
         >
           <Image
             src={images.story_origin}
-            alt="The Pam's Kitchen experience"
+            alt="The Wagon Wheel experience"
             width={800}
             height={600}
             className="rounded-3xl object-top object-cover w-full h-full aspect-4/3"
@@ -199,7 +199,7 @@ export default function StoryClient({
           <p className="mt-6 text-gray-400 text-lg leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore. Homemade comfort food, served
-            fresh every day in Friona, Texas.
+            fresh every day in Eagle Pass, Texas.
           </p>
         </motion.blockquote>
       </section>
@@ -266,7 +266,7 @@ export default function StoryClient({
         >
           <Image
             src={images.story_closing}
-            alt="Pam's Kitchen dining experience"
+            alt="The Wagon Wheel dining experience"
             width={1600}
             height={700}
             className="w-full object-cover max-h-125"
@@ -277,7 +277,7 @@ export default function StoryClient({
               This Is Just the Beginning
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Friona&apos;s
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eagle Pass&apos;s
               appetite for fresh homemade food is wide open - and Pam&apos;s Kitchen
               is here to fill it, one plate at a time.
             </p>

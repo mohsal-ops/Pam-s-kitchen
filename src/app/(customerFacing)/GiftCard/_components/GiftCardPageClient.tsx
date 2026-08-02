@@ -94,7 +94,7 @@ export default function GiftCardPageClient() {
         <div className="relative z-10">
           <div className="flex justify-center mb-6">
             <div className="rounded-2xl bg-brand p-3 shadow-xl">
-              <Image src={logo} alt="Pam's Kitchen" className="h-20 w-20 rounded-full object-cover" />
+              <Image src={logo} alt="The Wagon Wheel" className="h-20 w-20 rounded-full object-cover" />
             </div>
           </div>
 
@@ -104,7 +104,7 @@ export default function GiftCardPageClient() {
 
           <p className="mt-6 max-w-2xl mx-auto text-yellow-200 text-lg">
             Premium food. Bold flavors. One unforgettable experience. Send a
-            Pam's Kitchen gift card instantly.
+            The Wagon Wheel gift card instantly.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function GiftCardPageClient() {
           <div className="rounded-2xl bg-linear-to-br from-yellow-400 to-yellow-300 p-8 shadow-2xl -rotate-3">
             <div className="flex justify-between items-center mb-10">
               <span className="font-bold text-black text-xl">
-                Pam's Kitchen
+                The Wagon Wheel
               </span>
               <span className="text-black/70">Gift Card</span>
             </div>

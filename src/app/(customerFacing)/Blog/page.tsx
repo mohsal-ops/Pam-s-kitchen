@@ -5,12 +5,12 @@ import PostCard from "../_components/PostCard";
 import InstagramFeed from "./_components/InstagramFeed";
 
 export const metadata = {
-  title: "Pam's Kitchen Journal | Caribbean Food & Culture",
+  title: "The Wagon Wheel Journal | Caribbean Food & Culture",
   description:
-    "Discover stories, flavors, and behind-the-scenes from Pam's Kitchen - the home of authentic Caribbean fusion cuisine.",
+    "Discover stories, flavors, and behind-the-scenes from The Wagon Wheel - the home of authentic Caribbean fusion cuisine.",
   openGraph: {
-    title: "Pam's Kitchen Journal",
-    description: "Stories, culture and food from Pam's Kitchen restaurant.",
+    title: "The Wagon Wheel Journal",
+    description: "Stories, culture and food from The Wagon Wheel restaurant.",
   },
 };
 

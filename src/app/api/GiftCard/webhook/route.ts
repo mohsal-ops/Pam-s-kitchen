@@ -47,7 +47,7 @@ export async function POST(req: Request) {
 
     try {
       await transporter.sendMail({
-        from: `"Pam's Kitchen Gift Card" <${process.env.SMTP_USER}>`,
+        from: `"The Wagon Wheel Gift Card" <${process.env.SMTP_USER}>`,
         to: process.env.CATERING_EMAIL,
         subject: "New Gift Card Purchase",
         html: `
