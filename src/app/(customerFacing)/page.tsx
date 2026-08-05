@@ -142,8 +142,8 @@ export default async function Home() {
   ] = await Promise.all([
     getSiteImage("home_hero"),
     getSiteImage("home_order"),
-    getSiteImage("home_feature_breakfast"),
-    getSiteImage("home_feature_comfort"),
+    getSiteImage("home_feature_1"),
+    getSiteImage("home_feature_2"),
     getHomeText(),
   ]);
 
