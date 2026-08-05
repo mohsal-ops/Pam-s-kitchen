@@ -51,6 +51,10 @@ export const SITE_CONFIG = {
   ],
   ogImage: "/general/generalPages/mainImage.jpg",
 
+  // Structured-data / business info (used in JSON-LD)
+  cuisines: ["Barbecue", "American", "Texan"],
+  priceRange: "$$",
+
   // Colors (Tailwind hex values)
   primaryColor: "#b91c1c",
   secondaryColor: "#1a1a1a",

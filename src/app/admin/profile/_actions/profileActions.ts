@@ -4,6 +4,7 @@ import { randomBytes } from "crypto";
 import db from "@/db/db";
 import { getCurrentAdmin } from "@/lib/getCurrentAdmin";
 import { hashPassword, verifyPassword } from "@/lib/password";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import { sendMail } from "@/lib/email";
 import { revalidatePath } from "next/cache";
 
@@ -49,7 +50,7 @@ export async function requestEmailChange(newEmail: string) {
   try {
     await sendMail({
       to: normalized,
-      subject: "Confirm your new The Wagon Wheel admin email",
+      subject: `Confirm your new ${SITE_CONFIG.name} admin email`,
       html: `
         <h2>Confirm your new email</h2>
         <p>Hi ${admin.name}, click below to make this your new admin sign-in email.</p>

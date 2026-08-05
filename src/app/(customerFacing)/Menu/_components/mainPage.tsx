@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { FaLocationPin } from "react-icons/fa6";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import { PiMagnifyingGlass } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { AllDishesSuspense, PopularDishesSuspense } from "./ProductSuspense";
@@ -220,11 +221,11 @@ export default function MainPageMenu({
           id="name&address"
         >
           <p className="tracking-tight font-serif  text-xl text-center">
-            Burgers, Breakfast, Pizza & Daily Specials
+            {SITE_CONFIG.tagline}
           </p>
           <span className="flex text-sm space-x-2 justify-center sm:justify-start items-center font-semibold w-4/5 gap-1  text-neutral-600 text-center  ">
             <FaLocationPin className="md:block hidden" />
-            <p>2950 Gears Rd. Eagle Pass, TX 77067</p>
+            <p>{SITE_CONFIG.address}</p>
 
             <p className="flex items-center gap-1.5 text-sm font-medium">
               <span

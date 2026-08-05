@@ -37,6 +37,7 @@
 
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import { google } from "googleapis";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import type { protos } from "@google-analytics/data";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -509,7 +510,7 @@ export async function getPageSpeedData(
   const apiKey = process.env.PAGESPEED_API_KEY;
 
   // Use dedicated pagespeed URL, not the sc-domain: Search Console one
-  const baseUrl = process.env.PAGESPEED_SITE_URL ?? "https://thewagonwheel.co";
+  const baseUrl = process.env.PAGESPEED_SITE_URL ?? SITE_CONFIG.siteUrl;
   const targetUrl = pageUrl ?? baseUrl;
 
   if (!apiKey) {

@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import db from "@/db/db";
 
-const BASE_URL = "https://thewagonwheel.co";
+const BASE_URL = SITE_CONFIG.siteUrl;
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1, changeFrequency: "daily" },

@@ -7,6 +7,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 
 type Phase = "assemble" | "hold" | "flip" | "holdLogo" | "fadeOut";
 
@@ -18,7 +19,7 @@ const T = {
   end: 3900,
 };
 
-const NAME = "The Wagon Wheel";
+const NAME = SITE_CONFIG.name;
 
 // Shine lines radiating OUTWARD from around the burger (start near its edge and
 // shoot outward past the viewBox - the SVG uses overflow:visible).
