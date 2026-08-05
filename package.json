@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "seed:defaults": "node prisma/seed.defaults.mjs",
     "postinstall": "prisma generate"
   },
   "dependencies": {
