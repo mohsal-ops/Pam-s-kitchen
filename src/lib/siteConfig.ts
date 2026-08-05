@@ -2,6 +2,39 @@
 // To onboard a new restaurant client, this is the only file that should
 // need to change (plus swapping image assets in /public).
 
+// Optional sections. Flip a flag to false to remove that section from the
+// navbar + footer (the new-project tool sets these per client). The route
+// still exists, it is simply not linked.
+const FEATURES = {
+  catering: true,
+  giftCard: true,
+  rewards: true,
+  blog: true,
+};
+type FeatureKey = keyof typeof FEATURES;
+
+type NavLink = { label: string; href: string; feature?: FeatureKey };
+
+const ALL_NAV_LINKS: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Menu", href: "/Menu" },
+  { label: "Catering", href: "/catering", feature: "catering" },
+  { label: "Gift Card", href: "/GiftCard", feature: "giftCard" },
+  { label: "Rewards", href: "/rewards", feature: "rewards" },
+  { label: "Press", href: "/Blog", feature: "blog" },
+  { label: "Our Story", href: "/story" },
+];
+
+const ALL_FOOTER_LINKS: NavLink[] = [
+  { label: "Menu", href: "/Menu" },
+  { label: "Catering", href: "/catering", feature: "catering" },
+  { label: "Gift Cards", href: "/GiftCard", feature: "giftCard" },
+  { label: "Terms", href: "/terms" },
+];
+
+const enabled = (l: NavLink) => !l.feature || FEATURES[l.feature];
+const pickLink = ({ label, href }: NavLink) => ({ label, href });
+
 export const SITE_CONFIG = {
   // Brand
   name: "The Wagon Wheel",
@@ -120,28 +153,18 @@ export const SITE_CONFIG = {
     ],
   },
 
-  // Navbar links
-  navLinks: [
-    { label: "Home", href: "/" },
-    { label: "Menu", href: "/Menu" },
-    { label: "Catering", href: "/catering" },
-    { label: "Gift Card", href: "/GiftCard" },
-    { label: "Rewards", href: "/rewards" },
-    { label: "Press", href: "/Blog" },
-    { label: "Our Story", href: "/story" },
-  ],
+  // Which optional sections are enabled (see FEATURES above)
+  features: FEATURES,
+
+  // Navbar links (derived from FEATURES)
+  navLinks: ALL_NAV_LINKS.filter(enabled).map(pickLink),
 
   // Footer
   footer: {
     get copyright() {
       return `© ${new Date().getFullYear()} The Wagon Wheel. All rights reserved.`;
     },
-    links: [
-      { label: "Menu", href: "/Menu" },
-      { label: "Catering", href: "/catering" },
-      { label: "Gift Cards", href: "/GiftCard" },
-      { label: "Terms", href: "/terms" },
-    ],
+    links: ALL_FOOTER_LINKS.filter(enabled).map(pickLink),
   },
 };
 
