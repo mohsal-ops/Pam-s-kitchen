@@ -31,9 +31,9 @@ const PG_VERSION = 17;
 // ── tiny helpers ─────────────────────────────────────────────────────────────
 const log = (m) => console.log(m);
 const step = (m) => console.log(`\n▶ ${m}`);
+class FatalError extends Error {}
 const die = (m) => {
-  console.error(`\n✖ ${m}`);
-  process.exit(1);
+  throw new FatalError(m);
 };
 
 function parseEnvFile(file) {
@@ -310,4 +310,7 @@ async function main() {
   log(`then add menu items + images from the admin dashboard.`);
 }
 
-main().catch((e) => die(e.message));
+main().catch((e) => {
+  console.error(`\n✖ ${e.message}`);
+  process.exitCode = 1;
+});
