@@ -1,18 +1,11 @@
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import db from "@/db/db";
 import PostCard from "../_components/PostCard";
 import InstagramFeed from "./_components/InstagramFeed";
 
-export const metadata = {
-  title: "The Wagon Wheel Journal | Texas BBQ & Culture",
-  description:
-    "Discover stories, flavors, and behind-the-scenes from The Wagon Wheel - the home of Eagle Pass' viral Texas BBQ.",
-  openGraph: {
-    title: "The Wagon Wheel Journal",
-    description: "Stories, culture and food from The Wagon Wheel restaurant.",
-  },
-};
+export const metadata = buildMetadata("blog");
 
 export default async function BlogPage() {
   const posts = await db.post.findMany({

@@ -1,14 +1,6 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms and Policies",
-  description:
-    "Terms of service, privacy policy, and ordering policies for The Wagon Wheel in Eagle Pass, TX.",
-  robots: { index: false, follow: true },
-  alternates: {
-    canonical: "/terms",
-  },
-};
+export const metadata = buildMetadata("terms");
 
 export default function TermsAndPolicies() {
   return (

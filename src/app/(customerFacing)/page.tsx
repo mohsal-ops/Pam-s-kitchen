@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
+import { buildMetadata } from "@/lib/seo";
 import { cookies } from "next/headers";
 import {
   GetCartItems,
@@ -36,50 +36,7 @@ export type ItemWithSides = Item & {
   })[];
 };
 
-export const metadata: Metadata = {
-  title: "The Wagon Wheel | Homemade Comfort Food & All-Day Breakfast in Eagle Pass, TX",
-  description:
-    "The Wagon Wheel serves fresh homemade breakfast all day, hand-pressed burgers, homemade pizza, and daily specials in Eagle Pass, TX. A family-friendly kitchen with catering and gift cards.",
-  keywords: [
-    "breakfast Eagle Pass TX",
-    "burgers Eagle Pass",
-    "homemade food Eagle Pass",
-    "daily specials Eagle Pass",
-    "pizza Eagle Pass",
-    "family restaurant Eagle Pass",
-    "The Wagon Wheel Eagle Pass",
-  ],
-  alternates: {
-    canonical: "/",
-  },
-  icons: {
-    icon: "/logo.png",
-  },
-  openGraph: {
-    title: "The Wagon Wheel | Homemade Comfort Food in Eagle Pass, TX",
-    description:
-      "Fresh homemade breakfast all day, hand-pressed burgers, pizza, and daily specials at The Wagon Wheel in Eagle Pass, TX.",
-    url: "/",
-    siteName: "The Wagon Wheel",
-    images: [
-      {
-        url: "/general/generalPages/mainImage.jpg",
-        width: 1200,
-        height: 630,
-        alt: "The Wagon Wheel homemade food in Eagle Pass, TX",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "The Wagon Wheel | Homemade Comfort Food in Eagle Pass, TX",
-    description:
-      "Homemade breakfast all day, burgers, pizza, and daily specials you'll crave.",
-    images: ["/general/generalPages/mainImage.jpg"],
-  },
-};
+export const metadata = buildMetadata("home");
 
 function FaqSchema() {
   // Mirrors the questions/answers rendered in Frequentlyaskedquestions below -

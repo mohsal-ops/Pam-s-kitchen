@@ -1,28 +1,10 @@
-import type { Metadata } from "next";
 import logo from "public/logo.png";
+import { buildMetadata } from "@/lib/seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Rewards | Earn Points on Texas BBQ",
-  description:
-    "Join The Wagon Wheel Rewards in Eagle Pass, TX - earn points on every Texas BBQ order and redeem them for free sides and combos. No app required.",
-  keywords: [
-    "restaurant rewards Eagle Pass",
-    "loyalty program Eagle Pass restaurant",
-    "The Wagon Wheel rewards",
-  ],
-  alternates: {
-    canonical: "/rewards",
-  },
-  openGraph: {
-    title: "Rewards | The Wagon Wheel Eagle Pass",
-    description:
-      "Earn points on every order and redeem them for free sides and combos at The Wagon Wheel.",
-    url: "/rewards",
-  },
-};
+export const metadata = buildMetadata("rewards");
 
 export default function RewardsPage() {
   return (
