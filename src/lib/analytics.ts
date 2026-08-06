@@ -144,8 +144,8 @@ function debugLog(label: string, data: unknown) {
 }
 
 const credentials = {
-  client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL!,
-  private_key: process.env.GOOGLE_PRIVATE_KEY!.replace(/\\n/g, "\n"),
+  client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "",
+  private_key: (process.env.GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
 };
 
 // GA4_PROPERTY_ID must be ONLY the number - no "properties/" prefix, no "G-" prefix

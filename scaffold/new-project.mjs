@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Nova Vision DZ — new client site scaffolder
+// VegaStar Digital — new client site scaffolder
 //
 //   npm run new-project -- --name "Joe's Diner"
 //   npm run new-project -- --name "Joe's Diner" --features menu,catering --mode direct --dry-run
@@ -178,7 +178,7 @@ async function main() {
     const repo = await api("https://api.github.com/user/repos", {
       method: "POST",
       token: GITHUB_TOKEN,
-      body: { name: repoName, private: args.private, description: `${name} — built by Nova Vision DZ` },
+      body: { name: repoName, private: args.private, description: `${name} — built by VegaStar Digital` },
     });
     cloneUrl = repo.clone_url;
     repoHtmlUrl = repo.html_url;
@@ -200,7 +200,7 @@ async function main() {
       const auth = ["-c", `http.extraheader=AUTHORIZATION: bearer ${GITHUB_TOKEN}`];
       run("git", ["init", "-b", "main"], { cwd: workdir });
       run("git", ["add", "-A"], { cwd: workdir });
-      run("git", ["-c", "user.email=tool@novavision.dz", "-c", "user.name=Nova Vision", "commit", "-m", `Initial site for ${name}`], { cwd: workdir });
+      run("git", ["-c", "user.email=tool@vegastar.digital", "-c", "user.name=VegaStar Digital", "commit", "-m", `Initial site for ${name}`], { cwd: workdir });
       run("git", [...auth, "push", cloneUrl, "main"], { cwd: workdir });
       log(`  pushed initial commit`);
     } finally {
