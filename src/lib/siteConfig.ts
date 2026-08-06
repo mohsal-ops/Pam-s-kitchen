@@ -44,6 +44,10 @@ export const SITE_CONFIG = {
   legalName: "The Wagon Wheel",
   trademark: "The Wagon Wheel",
 
+  // Main call-to-action button label, used on every "menu" button across the
+  // site. Set it to whatever fits: "Order now", "View our menu", "See the menu"…
+  menuCtaLabel: "Order now",
+
   // Contact & Location
   // NOTE: exact street address + phone are placeholders - update with the real ones.
 

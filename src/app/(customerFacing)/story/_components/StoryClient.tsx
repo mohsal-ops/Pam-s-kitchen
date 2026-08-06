@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import { Partner } from "generated/prisma";
 
 type StoryImages = {
@@ -285,7 +286,7 @@ export default function StoryClient({
               href="/Menu"
               className="inline-flex items-center gap-2 bg-brand text-brand-foreground font-semibold px-7 py-3 rounded-xl hover:bg-brand-dark transition-colors text-sm"
             >
-              View our menu
+              {SITE_CONFIG.menuCtaLabel}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

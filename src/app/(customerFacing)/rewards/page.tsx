@@ -3,10 +3,12 @@ import { buildMetadata } from "@/lib/seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { getLogoUrl } from "@/lib/siteSettings";
 
 export const metadata = buildMetadata("rewards");
 
-export default function RewardsPage() {
+export default async function RewardsPage() {
+  const logoUrl = await getLogoUrl();
   return (
     <div className="max-w-5xl mx-auto mt-10 space-y-16">
       {/* 🔥 HERO */}
@@ -14,7 +16,7 @@ export default function RewardsPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${logo.src})`,
+            backgroundImage: `url(${logoUrl || logo.src})`,
             backgroundRepeat: "repeat",
             backgroundSize: "200px 200px",
             transform: "rotate(-8deg) scale(1.2)",

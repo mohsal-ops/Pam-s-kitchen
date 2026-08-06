@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import logo from "public/logo.png";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 import { formatCurrency } from "@/lib/formatters";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -23,7 +24,7 @@ const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string,
 );
 
-export default function GiftCardPageClient() {
+export default function GiftCardPageClient({ logoUrl }: { logoUrl?: string }) {
   const [clientSecret, setClientSecret] = useState<string>();
   const [price, setPrice] = useState(50 * 100);
   const route = useRouter();
@@ -94,7 +95,7 @@ export default function GiftCardPageClient() {
         <div className="relative z-10">
           <div className="flex justify-center mb-6">
             <div className="rounded-2xl bg-brand p-3 shadow-xl">
-              <Image src={logo} alt="The Wagon Wheel" className="h-20 w-20 rounded-full object-cover" />
+              <Image src={logoUrl || logo} alt={`${SITE_CONFIG.name}`} className="h-20 w-20 rounded-full object-cover" />
             </div>
           </div>
 

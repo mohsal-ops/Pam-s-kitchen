@@ -59,7 +59,7 @@ export function TopSection({
         </span>
         <Link href="/Menu">
           <Button size="lg" variant="mainButton">
-            View our menu
+            {SITE_CONFIG.menuCtaLabel}
             <MdKeyboardArrowRight />
           </Button>
         </Link>
@@ -116,7 +116,7 @@ export function OrderDirectlyfromOUrWebsite({ image }: { image?: string }) {
           </p>
           <Link href="/Menu" className="inline-block">
             <Button size="lg" variant="mainButton">
-              View our menu
+              {SITE_CONFIG.menuCtaLabel}
               <MdKeyboardArrowRight />
             </Button>
           </Link>

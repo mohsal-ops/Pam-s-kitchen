@@ -1,6 +1,7 @@
 import { Gamepad2, Star, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 
 const HeroSection = () => {
   return (
@@ -89,7 +90,7 @@ const HeroSection = () => {
               variant="outline"
               className="rounded-xl text-base px-8 h-12 border-white/15 hover:text-black bg-white/5 text-white"
             >
-              <Link href="/Menu">View Menu</Link>
+              <Link href="/Menu">{SITE_CONFIG.menuCtaLabel}</Link>
             </Button>
           </div>
 

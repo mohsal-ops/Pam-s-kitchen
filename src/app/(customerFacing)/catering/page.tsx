@@ -1,9 +1,10 @@
 import CateringPageClient from "./_components/CateringPageClient";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_CONFIG } from "@/lib/siteConfig";
+import { getLogoUrl } from "@/lib/siteSettings";
 
 export const metadata = buildMetadata("catering");
 
-export default function Page() {
-  return <CateringPageClient />;
+export default async function Page() {
+  const logoUrl = await getLogoUrl();
+  return <CateringPageClient logoUrl={logoUrl} />;
 }

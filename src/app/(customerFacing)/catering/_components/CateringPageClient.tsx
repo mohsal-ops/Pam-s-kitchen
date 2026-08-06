@@ -93,7 +93,7 @@ const CATERING_PACKAGES: {
   },
 ];
 
-export default function CateringPageClient() {
+export default function CateringPageClient({ logoUrl }: { logoUrl?: string }) {
   const [open, setOpen] = useState(false);
   const packagesRef = useRef<HTMLDivElement | null>(null);
   const [formData, setFormData] = useState({
@@ -151,7 +151,7 @@ export default function CateringPageClient() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${logo.src})`,
+            backgroundImage: `url(${logoUrl || logo.src})`,
             backgroundRepeat: "repeat",
             backgroundSize: "100px 100px", // You can adjust the size based on your preference
             transform: "rotate(-8deg) scale(1.2)",
