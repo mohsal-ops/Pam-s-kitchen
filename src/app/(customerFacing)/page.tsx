@@ -13,7 +13,7 @@ import HomeFeaturedSkeleton from "./_skeletons/HomeFeaturedSkeleton";
 import db from "@/db/db";
 import { getBusinessHours } from "@/lib/getHours";
 import { getSiteImage } from "@/lib/getSiteImages";
-import { getHomeText } from "@/lib/siteSettings";
+import { getSiteText } from "@/lib/siteSettings";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 import {
   TopSection,
@@ -144,7 +144,7 @@ export default async function Home() {
     getSiteImage("home_order"),
     getSiteImage("home_feature_1"),
     getSiteImage("home_feature_2"),
-    getHomeText(),
+    getSiteText(),
   ]);
 
   return (
@@ -185,6 +185,12 @@ export default async function Home() {
       <FadeIn delay={400}>
         <DistinctiveFeatures
           images={{ breakfast: featureBreakfast, comfort: featureComfort }}
+          texts={{
+            feature1Title: homeText.feature1Title,
+            feature1Desc: homeText.feature1Desc,
+            feature2Title: homeText.feature2Title,
+            feature2Desc: homeText.feature2Desc,
+          }}
         />
       </FadeIn>
       <SectionDivider />
