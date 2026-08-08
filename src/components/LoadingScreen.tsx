@@ -121,26 +121,44 @@ function FrontArt({ variant, phase }: { variant: Variant; phase: Phase }) {
   }
 
   if (variant === "pizza") {
+    // The whole pie draws its crust, tops itself, then does a playful spin.
+    const spin = phase === "hold" ? "pizzaSpin 0.8s cubic-bezier(0.45,0,0.25,1) both" : "none";
     return (
-      <svg width="70" viewBox="0 0 120 100" fill="none" style={{ overflow: "visible" }}>
+      <svg width="72" viewBox="0 0 120 100" fill="none" style={{ overflow: "visible" }}>
         {shine}
-        {/* Crust (curved base) */}
-        <path d="M 34,66.5 Q 60,77 86,66.5" stroke="#121212" strokeWidth={4} fill="none" strokeLinecap="round"
-          style={{ ...svgLayer, animation: layerAnim(phase, 0) }} />
-        {/* Slice body */}
-        <path d="M 60,24 L 85,68 Q 60,76 35,68 Z" {...outline} style={{ ...svgLayer, animation: layerAnim(phase, 100) }} />
-        {/* Sauce / cheese — the accent */}
-        <path d="M 60,32 L 78,64 Q 60,70 42,64 Z" fill={accent.fill} stroke="#121212" strokeWidth={1.4}
-          style={{ ...svgLayer, animation: layerAnim(phase, 200) }} />
-        {/* Pepperoni */}
-        {[
-          { cx: 53, cy: 50, r: 3.3, d: 380 },
-          { cx: 66, cy: 53, r: 3.0, d: 450 },
-          { cx: 59, cy: 61, r: 2.6, d: 520 },
-        ].map((p, i) => (
-          <circle key={i} cx={p.cx} cy={p.cy} r={p.r} fill="#b5301a" stroke="#121212" strokeWidth={1}
-            style={{ ...svgLayer, animation: popAnim(phase, p.d) }} />
-        ))}
+        <g style={{ transformBox: "fill-box", transformOrigin: "center", animation: spin }}>
+          {/* Sauce / cheese base — the accent */}
+          <circle cx={60} cy={50} r={28} fill={accent.fill}
+            style={{ ...svgLayer, animation: phase === "assemble" ? "seedPop 0.42s cubic-bezier(0.34,1.56,0.64,1) 120ms both" : "none" }} />
+          {/* Inner cheese ring highlight */}
+          <circle cx={60} cy={50} r={23} fill="none" stroke="#fff2d6" strokeWidth={2} opacity={0.55}
+            style={{ ...svgLayer, animation: phase === "assemble" ? "seedPop 0.42s ease 240ms both" : "none" }} />
+          {/* Crust outline — draws on */}
+          <circle cx={60} cy={50} r={32} fill="none" stroke="#121212" strokeWidth={3.2}
+            strokeDasharray={210}
+            style={{ ...svgLayer, animation: phase === "assemble" ? "pizzaDraw 0.6s ease 40ms both" : "none" }} />
+          {/* Pepperoni */}
+          {[
+            { cx: 60, cy: 34, d: 360 },
+            { cx: 74, cy: 45, d: 410 },
+            { cx: 70, cy: 62, d: 460 },
+            { cx: 54, cy: 65, d: 510 },
+            { cx: 45, cy: 52, d: 560 },
+            { cx: 52, cy: 40, d: 610 },
+          ].map((p, i) => (
+            <circle key={i} cx={p.cx} cy={p.cy} r={4} fill="#b5301a" stroke="#7d1f12" strokeWidth={0.8}
+              style={{ ...svgLayer, animation: popAnim(phase, p.d) }} />
+          ))}
+          {/* Basil leaves */}
+          {[
+            { cx: 66, cy: 53, d: 440 },
+            { cx: 50, cy: 57, d: 500 },
+            { cx: 64, cy: 42, d: 560 },
+          ].map((b, i) => (
+            <ellipse key={`b${i}`} cx={b.cx} cy={b.cy} rx={2.6} ry={1.5} fill="#3f7d4e"
+              style={{ ...svgLayer, animation: popAnim(phase, b.d) }} />
+          ))}
+        </g>
       </svg>
     );
   }
@@ -203,12 +221,21 @@ export default function LoadingScreen({
 
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const exitRef = useRef(false);
+  const decidedOnce = useRef(false);
 
   // Decide once, client-side, whether to play — once per browser session.
   // Rendering null on both the server and the first client render (decided=false)
-  // avoids any hydration mismatch.
+  // avoids any hydration mismatch. The decidedOnce ref guards against React
+  // StrictMode's double-invoke in dev, which would otherwise read back the
+  // sessionStorage flag it just set and refuse to play.
   useEffect(() => {
-    if (keepLooping) {
+    if (decidedOnce.current) return;
+    decidedOnce.current = true;
+
+    // In dev, always play so the animation is easy to see while iterating; the
+    // once-per-session gate only applies to the real (production) site.
+    const isProd = process.env.NODE_ENV === "production";
+    if (keepLooping || !isProd) {
       setPlay(true);
       setDecided(true);
       return;
@@ -288,6 +315,8 @@ export default function LoadingScreen({
           100% { opacity: 1; transform: translateY(0) scale(1); }
         }
         @keyframes seedPop { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
+        @keyframes pizzaDraw { from { stroke-dashoffset: 210; } to { stroke-dashoffset: 0; } }
+        @keyframes pizzaSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes shineOut { 0% { stroke-dashoffset: 20; opacity: 0.2; } 45% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: -20; opacity: 0; } }
         @keyframes steam { 0% { opacity: 0; transform: translateY(4px); } 40% { opacity: 0.55; } 100% { opacity: 0; transform: translateY(-8px); } }
         @keyframes coinFlip {
