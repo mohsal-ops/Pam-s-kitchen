@@ -248,7 +248,6 @@ export default function StoryClient({
               transition={{ duration: 0.7, ease: "easeOut", delay: i * 0.12 }}
               className="bg-white border border-stone-200 rounded-2xl p-8 space-y-3"
             >
-              <span className="text-3xl">{v.icon}</span>
               <h3 className="text-xl font-semibold">{v.title}</h3>
               <p className="text-gray-500 leading-relaxed">{v.text}</p>
             </motion.div>
