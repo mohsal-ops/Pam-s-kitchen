@@ -92,7 +92,7 @@ export function PopularDishesCardClient({
               src={image ? image : fallbackImg}
               fill
               alt={name}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 400px"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>
