@@ -44,6 +44,9 @@ export const SITE_CONFIG = {
   legalName: "The Wagon Wheel",
   trademark: "The Wagon Wheel",
 
+  // Admin intro animation: "burger" (fast food) | "coffee" (café) | "pizza" (pizzeria)
+  loaderStyle: "burger",
+
   // Main call-to-action button label, used on every "menu" button across the
   // site. Set it to whatever fits: "Order now", "View our menu", "See the menu"…
   menuCtaLabel: "Order now",
