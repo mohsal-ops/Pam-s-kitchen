@@ -81,7 +81,7 @@ export function PopularDishesCardClient({
   return (
     <div className="group space-y-2 bg-stone-200 p-2 rounded-2xl transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
       <Card
-        className="flex rounded-2xl overflow-hidden gap-5 sm:h-60   h-36 flex-col w-36  "
+        className="flex rounded-2xl overflow-hidden gap-5 sm:[h-60 w-60]  h-36 flex-col w-36  "
         key={id}
       >
         {/* <CardHeader className="relative w-full h-5/6 aspect-video">
